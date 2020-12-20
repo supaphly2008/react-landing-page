@@ -9,7 +9,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 800px;
+  height: 980px;
   position: relative;
   z-index: 1;
 `;

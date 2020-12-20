@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
-import { Link as LinkS } from "react-scroll";
+import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 
 const Nav = styled.nav`
-  background-color: #000;
+  background-color: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -15,9 +15,9 @@ const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-
+  transition: 0.3s all ease;
   @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
+    transition: 0.3s all ease;
   }
 `;
 
@@ -84,7 +84,7 @@ const NavLinks = styled(LinkS)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px sollid #01bf71;
+    border-bottom: 3px solid #01bf71;
   }
 `;
 
@@ -118,27 +118,53 @@ const NavBtnLink = styled(LinkR)`
 `;
 
 const Navbar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+      return;
+    }
+    setScrollNav(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
-      <Nav>
+      <Nav scrollNav={scrollNav}>
         <NavbarContainer>
-          <NavLogo to="/">EZ CUT</NavLogo>
+          <NavLogo to="/" onClick={scrollToTop}>
+            EZ CUT
+          </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">About</NavLinks>
+              <NavLinks to="about" smooth duration={500} spy exact="true" offset={-80}>
+                About
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="discover">Discover</NavLinks>
+              <NavLinks to="discover" smooth duration={500} spy exact="true" offset={-80}>
+                Discover
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="services">Services</NavLinks>
+              <NavLinks to="services" smooth duration={500} spy exact="true" offset={-80}>
+                Services
+              </NavLinks>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLinks to="signup">Sign Up</NavLinks>
-            </NavItem>
+            </NavItem> */}
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signin">Sign In</NavBtnLink>
