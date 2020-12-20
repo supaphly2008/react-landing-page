@@ -12,11 +12,11 @@ const SidebarContainer = styled.aside`
   background-color: #0d0d0d;
   display: grid;
   align-items: center;
-  top: 0;
+  /* top: 0; */
   left: 0;
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  top: ${({ isOpen }) => (isOpen ? "0" : "100%")};
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 `;
 
 const Closeicon = styled(FaTimes)`
@@ -99,10 +99,18 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about">About</SidebarLink>
-          <SidebarLink to="discover">Discover</SidebarLink>
-          <SidebarLink to="services">Services</SidebarLink>
-          <SidebarLink to="signup">Sign Up</SidebarLink>
+          <SidebarLink to="about" onClick={toggle}>
+            About
+          </SidebarLink>
+          <SidebarLink to="discover" onClick={toggle}>
+            Discover
+          </SidebarLink>
+          <SidebarLink to="services" onClick={toggle}>
+            Services
+          </SidebarLink>
+          <SidebarLink to="signup" onClick={toggle}>
+            Sign Up
+          </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signin">Sign In</SidebarRoute>
