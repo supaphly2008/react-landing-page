@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Services from "../components/Services";
 import { homeObjectOne, homeObjectTwo } from "../components/InfoSection/Data";
+import Contact from "../components/Contact";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,7 @@ const Home = () => {
       <InfoSection {...homeObjectOne} />
       <InfoSection {...homeObjectTwo} />
       <Services />
+      <Contact />
     </>
   );
 };
