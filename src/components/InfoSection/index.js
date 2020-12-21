@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
-import testimg from "../../images/svg-1.svg";
 
 const InfoContainer = styled.div`
   color: #fff;
