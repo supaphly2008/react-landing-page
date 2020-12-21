@@ -2,19 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const ContactContainer = styled.div`
-  height: 900px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    height: 1100px;
+    height: 900px;
   }
 
-  @media screen and (max-width: 480px) {
+  /* @media screen and (max-width: 480px) {
     height: 1300px;
-  }
+  } */
 `;
 
 const ContactH1 = styled.h1`
@@ -44,6 +44,7 @@ const ContactMap = styled.iframe`
 const ContactDetailWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 `;
 
 const ContactInfo = styled.div`
@@ -51,6 +52,10 @@ const ContactInfo = styled.div`
   width: 33%;
   text-align: center;
   /* border: 1px solid black; */
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 `;
 
 const ContactInfoH2 = styled.h2`
