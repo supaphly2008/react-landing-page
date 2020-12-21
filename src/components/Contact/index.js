@@ -11,10 +11,6 @@ const ContactContainer = styled.div`
   @media screen and (max-width: 768px) {
     height: 900px;
   }
-
-  /* @media screen and (max-width: 480px) {
-    height: 1300px;
-  } */
 `;
 
 const ContactH1 = styled.h1`
@@ -48,10 +44,8 @@ const ContactDetailWrapper = styled.div`
 `;
 
 const ContactInfo = styled.div`
-  /* font-size: 24px; */
   width: 33%;
   text-align: center;
-  /* border: 1px solid black; */
   @media screen and (max-width: 768px) {
     width: 100%;
     margin-bottom: 40px;
