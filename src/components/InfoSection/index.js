@@ -15,12 +15,15 @@ const InfoContainer = styled.div`
 const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 900px;
+  height: 800px;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
   justify-content: center;
+  @media screen and (min-width: 1200px) {
+    height: 980px;
+  }
 `;
 
 const InfoRow = styled.div`
