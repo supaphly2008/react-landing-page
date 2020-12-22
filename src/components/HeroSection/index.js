@@ -88,7 +88,7 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type="vieo/mp4" />
+        <VideoBg autoPlay loop playsinline muted src={Video} type="vieo/mp4" />
       </HeroBg>
       <HeroContent>
         <HeroH1>Virtual Banking Made Easy</HeroH1>
