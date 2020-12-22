@@ -88,35 +88,6 @@ const NavLinks = styled(LinkS)`
   }
 `;
 
-const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavBtnLink = styled(LinkR)`
-  border-radius: 50px;
-  background-color: #01bf71;
-  white-space: nowrap;
-  padding: 10px 22px;
-  color: #010606;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background-color: #fff;
-    color: #010606;
-  }
-`;
-
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
