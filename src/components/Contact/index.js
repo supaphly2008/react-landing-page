@@ -34,7 +34,7 @@ const ContactMap = styled.iframe`
   width: 100%;
   height: 300px;
   max-width: 1000px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 `;
 
 const ContactDetailWrapper = styled.div`

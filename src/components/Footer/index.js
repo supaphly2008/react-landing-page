@@ -12,6 +12,10 @@ const FooterContainer = styled.div`
 const FooterText = styled.p`
   font-size: 16px;
   color: #fff;
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 const Footer = () => {
