@@ -4,6 +4,8 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import ReactFlagsSelect from "react-flags-select";
+import "react-flags-select/css/react-flags-select.css";
 
 const Nav = styled.nav`
   background-color: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
@@ -142,6 +144,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
           </NavMenu>
+          <ReactFlagsSelect defaultCountry="US" countries={["US", "GB"]} />
         </NavbarContainer>
       </Nav>
     </>
