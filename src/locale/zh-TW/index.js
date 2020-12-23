@@ -1,6 +1,6 @@
-import hero from "./hero.json";
-import navbar from "./navbar.json";
-import info from "./info.json";
+import hero from "locale/zh-TW/hero.json";
+import navbar from "locale/zh-TW/navbar.json";
+import info from "locale/zh-TW/info.json";
 
 const zhTwTranslationObject = {
   ...hero,

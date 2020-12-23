@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Video from "../../videos/hero-video.mp4";
-import Button from "../../components/Button";
+import Video from "videos/hero-video.mp4";
+import Button from "components/Button";
 import { useTranslation } from "react-i18next";
 
 const HeroContainer = styled.div`

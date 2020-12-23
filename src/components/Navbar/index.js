@@ -4,7 +4,6 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import i18n from "../../locale/i18n";
 
 const Nav = styled.nav`
   background-color: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
@@ -91,9 +90,9 @@ const NavLinks = styled(LinkS)`
 `;
 
 const Navbar = ({ toggle }) => {
-  // TODO: add language dropdown
   const [scrollNav, setScrollNav] = useState(false);
-  const { t } = useTranslation();
+  // TODO: add language dropdown
+  const { t, i18n } = useTranslation();
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
