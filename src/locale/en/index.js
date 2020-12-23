@@ -4,6 +4,7 @@ import info from "locale/en/info.json";
 import services from "locale/en/services.json";
 import sidebar from "locale/en/sidebar.json";
 import contact from "locale/en/contact.json";
+import footer from "locale/en/footer.json";
 
 const enTranslationObj = {
   ...hero,
@@ -12,5 +13,6 @@ const enTranslationObj = {
   ...services,
   ...sidebar,
   ...contact,
+  ...footer,
 };
 export default enTranslationObj;

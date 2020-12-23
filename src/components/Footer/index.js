@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const FooterContainer = styled.div`
   background-color: #010606;
@@ -19,10 +20,12 @@ const FooterText = styled.p`
 `;
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   const date = new Date();
   return (
     <FooterContainer>
-      <FooterText>Copyright &copy; {date.getFullYear()}, EZ CUT</FooterText>
+      <FooterText>{t("footer.text", date.getFullYear())}</FooterText>
     </FooterContainer>
   );
 };
