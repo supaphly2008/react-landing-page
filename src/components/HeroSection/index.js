@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Video from "../../videos/hero-video.mp4";
 import Button from "../../components/Button";
+import { useTranslation } from "react-i18next";
 
 const HeroContainer = styled.div`
   background-color: #0c0c0c;
@@ -85,16 +86,17 @@ const HeroBtnWrapper = styled.div`
 `;
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   return (
     <HeroContainer>
       <HeroBg>
         <VideoBg autoPlay loop playsinline muted src={Video} type="vieo/mp4" />
       </HeroBg>
       <HeroContent>
-        <HeroH1>Virtual Banking Made Easy</HeroH1>
-        <HeroP>Sign up for a new account today and recieve $250 in credit towards your next payment.</HeroP>
+        <HeroH1>{t("hero.heading")}</HeroH1>
+        <HeroP>{t("hero.paragraph")}</HeroP>
         <HeroBtnWrapper>
-          <Button to="signup">Get Started</Button>
+          <Button to="signup">{t("hero.callToAction.button")}</Button>
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>

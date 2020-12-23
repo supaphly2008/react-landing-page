@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import Button from "../Button";
 
 const InfoContainer = styled.div`
@@ -100,7 +101,11 @@ const Img = styled.img`
   padding: 0;
 `;
 
-const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt }) => {
+const InfoSection = (props) => {
+  const { lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt } = props;
+
+  const { t } = useTranslation();
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -108,11 +113,11 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, headline, dark
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
+                <TopLine>{t(topLine)}</TopLine>
+                <Heading lightText={lightText}>{t(headline)}</Heading>
+                <Subtitle darkText={darkText}>{t(description)}</Subtitle>
                 <BtnWrap>
-                  <Button to="home">{buttonLabel}</Button>
+                  <Button to="home">{t(buttonLabel)}</Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>
