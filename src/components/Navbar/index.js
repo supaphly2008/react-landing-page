@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Nav = styled.nav`
   background-color: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
@@ -90,6 +91,8 @@ const NavLinks = styled(LinkS)`
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  // TODO: add language dropdown
+  const { t, i18n } = useTranslation();
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -112,7 +115,7 @@ const Navbar = ({ toggle }) => {
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
           <NavLogo to="/" onClick={scrollToTop}>
-            EZ CUT
+            {t("navbar.logo")}
           </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
@@ -120,28 +123,25 @@ const Navbar = ({ toggle }) => {
           <NavMenu>
             <NavItem>
               <NavLinks to="about" smooth duration={500} spy exact="true" offset={-80}>
-                About
+                {t("navbar.about")}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="discover" smooth duration={500} spy exact="true" offset={-80}>
-                Discover
+                {t("navbar.discover")}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="services" smooth duration={500} spy exact="true" offset={-80}>
-                Services
+                {t("navbar.services")}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="contact" smooth duration={500} spy exact="true" offset={-80}>
-                Contact Us
+                {t("navbar.contact")}
               </NavLinks>
             </NavItem>
           </NavMenu>
-          {/* <NavBtn>
-            <NavBtnLink to="/signin">Sign In</NavBtnLink>
-          </NavBtn> */}
         </NavbarContainer>
       </Nav>
     </>

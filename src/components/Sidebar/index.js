@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { Link as LinkS } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 const SidebarContainer = styled.aside`
   position: fixed;
@@ -66,6 +67,8 @@ const SidebarLink = styled(LinkS)`
 `;
 
 const Sidebar = ({ isOpen, toggle }) => {
+  const { t } = useTranslation();
+
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
@@ -74,21 +77,18 @@ const Sidebar = ({ isOpen, toggle }) => {
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink to="about" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
-            About
+            {t("sidebar.about")}
           </SidebarLink>
           <SidebarLink to="discover" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
-            Discover
+            {t("sidebar.discover")}
           </SidebarLink>
           <SidebarLink to="services" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
-            Services
+            {t("sidebar.services")}
           </SidebarLink>
           <SidebarLink to="contact" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
-            Contact Us
+            {t("sidebar.contact")}
           </SidebarLink>
         </SidebarMenu>
-        {/* <SideBtnWrap>
-          <SidebarRoute to="">Sign In</SidebarRoute>
-        </SideBtnWrap> */}
       </SidebarWrapper>
     </SidebarContainer>
   );

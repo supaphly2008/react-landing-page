@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 const ContactContainer = styled.div`
   height: 800px;
@@ -64,6 +65,8 @@ const ContactInfoP = styled.p`
 `;
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <ContactContainer id="contact">
       <ContactH1>Contact Us</ContactH1>
@@ -80,20 +83,20 @@ const Contact = () => {
         ></ContactMap>
         <ContactDetailWrapper>
           <ContactInfo>
-            <ContactInfoH2>CONTACTS</ContactInfoH2>
-            <ContactInfoP>Phone: +886907315855 </ContactInfoP>
-            <ContactInfoP>Email: contact@ezcut.co</ContactInfoP>
+            <ContactInfoH2>{t("contact.contact.title")}</ContactInfoH2>
+            <ContactInfoP>{t("contact.contact.phone")}</ContactInfoP>
+            <ContactInfoP>{t("contact.contact.email")}</ContactInfoP>
           </ContactInfo>
           <ContactInfo>
-            <ContactInfoH2>ADDRESS</ContactInfoH2>
-            <ContactInfoP>​新北市林口區文化二路一段 </ContactInfoP>
-            <ContactInfoP>390號 103-1室</ContactInfoP>
+            <ContactInfoH2>{t("contact.address.title")}</ContactInfoH2>
+            <ContactInfoP>{t("contact.address.info1")}</ContactInfoP>
+            <ContactInfoP>{t("contact.address.info2")}</ContactInfoP>
           </ContactInfo>
           <ContactInfo>
-            <ContactInfoH2>OPERATING HOURS</ContactInfoH2>
-            <ContactInfoP> Mon - Fri: 10am - 8:30pm</ContactInfoP>
-            <ContactInfoP>​​Sat: 10am - 8:30pm</ContactInfoP>
-            <ContactInfoP>​Sun: 10am - 8:30pm</ContactInfoP>
+            <ContactInfoH2>{t("contact.hours.title")}</ContactInfoH2>
+            <ContactInfoP>{t("contact.hours.info1")}</ContactInfoP>
+            <ContactInfoP>​​{t("contact.hours.info2")}</ContactInfoP>
+            <ContactInfoP>​{t("contact.hours.info3")}</ContactInfoP>
           </ContactInfo>
         </ContactDetailWrapper>
       </ContactWrapper>
