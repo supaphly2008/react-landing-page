@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import { Link as LinkS } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import Dropwdown from "components/Dropdown";
+import usFlag from "images/us.svg";
+import twFlag from "images/tw.svg";
 
 const SidebarContainer = styled.aside`
   position: fixed;
@@ -12,7 +15,6 @@ const SidebarContainer = styled.aside`
   background-color: #0d0d0d;
   display: grid;
   align-items: center;
-  /* top: 0; */
   left: 0;
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
@@ -66,6 +68,30 @@ const SidebarLink = styled(LinkS)`
   }
 `;
 
+const LanguageDropdown = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const options = [
+  {
+    value: "zh",
+    name: "中文",
+    icon: twFlag,
+  },
+  {
+    value: "en",
+    name: "EN",
+    icon: usFlag,
+  },
+];
+
+const defaultOption = {
+  value: "en",
+  name: "EN",
+  icon: usFlag,
+};
+
 const Sidebar = ({ isOpen, toggle }) => {
   const { t } = useTranslation();
 
@@ -89,6 +115,9 @@ const Sidebar = ({ isOpen, toggle }) => {
             {t("sidebar.contact")}
           </SidebarLink>
         </SidebarMenu>
+        <LanguageDropdown>
+          <Dropwdown options={options} defaultOption={defaultOption} />
+        </LanguageDropdown>
       </SidebarWrapper>
     </SidebarContainer>
   );

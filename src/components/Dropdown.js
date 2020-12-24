@@ -14,6 +14,7 @@ const DropdownBox = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
+  padding: 8px;
 `;
 
 const DropdownListItem = styled.li`
@@ -49,7 +50,12 @@ const Dropdown = (props) => {
 
   return (
     <DropwdownContainer className={className}>
-      <DropdownBox onClick={() => setShowDropdown(!showDropdown)}>
+      <DropdownBox
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowDropdown(!showDropdown);
+        }}
+      >
         <Img src={selectedOption.icon} alt="" />
         {selectedOption.name}
       </DropdownBox>
