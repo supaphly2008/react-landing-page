@@ -155,8 +155,8 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="discover" smooth duration={500} spy exact="true" offset={-80}>
-                {t("navbar.discover")}
+              <NavLinks to="gallery" smooth duration={500} spy exact="true" offset={-80}>
+                {t("navbar.gallery")}
               </NavLinks>
             </NavItem>
             <NavItem>

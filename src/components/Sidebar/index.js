@@ -105,8 +105,8 @@ const Sidebar = ({ isOpen, toggle }) => {
           <SidebarLink to="about" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
             {t("sidebar.about")}
           </SidebarLink>
-          <SidebarLink to="discover" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
-            {t("sidebar.discover")}
+          <SidebarLink to="gallery" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
+            {t("sidebar.gallery")}
           </SidebarLink>
           <SidebarLink to="services" smooth duration={500} spy exact="true" offset={-80} onClick={toggle}>
             {t("sidebar.services")}
