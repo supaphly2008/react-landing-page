@@ -25,7 +25,7 @@ const Nav = styled.nav`
 
 const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 80px;
   z-index: 1;
   width: 100%;
