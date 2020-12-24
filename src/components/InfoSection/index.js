@@ -117,7 +117,9 @@ const InfoSection = (props) => {
                 <Heading lightText={lightText}>{t(headline)}</Heading>
                 <Subtitle darkText={darkText}>{t(description)}</Subtitle>
                 <BtnWrap>
-                  <Button to="home">{t(buttonLabel)}</Button>
+                  <Button to="contact" smooth duration={500} spy exact="true" offset={-80}>
+                    {t(buttonLabel)}
+                  </Button>
                 </BtnWrap>
               </TextWrapper>
             </Column1>

@@ -96,7 +96,9 @@ const HeroSection = () => {
         <HeroH1>{t("hero.heading")}</HeroH1>
         <HeroP>{t("hero.paragraph")}</HeroP>
         <HeroBtnWrapper>
-          <Button to="signup">{t("hero.callToAction.button")}</Button>
+          <Button to="about" smooth duration={500} spy exact="true" offset={-80}>
+            {t("hero.callToAction.button")}
+          </Button>
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
