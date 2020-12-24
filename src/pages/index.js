@@ -4,7 +4,8 @@ import InfoSection from "components/InfoSection";
 import Navbar from "components/Navbar";
 import Sidebar from "components/Sidebar";
 import Services from "components/Services";
-import { homeObjectOne, homeObjectTwo } from "components/InfoSection/Data";
+import { homeObjectOne } from "components/InfoSection/Data";
+import Gallery from "components/Gallery";
 import Contact from "components/Contact";
 import Footer from "components/Footer";
 
@@ -21,7 +22,7 @@ const Home = () => {
       <Sidebar toggle={toggle} isOpen={isOpen} />
       <HeroSection />
       <InfoSection {...homeObjectOne} />
-      <InfoSection {...homeObjectTwo} />
+      <Gallery />
       <Services />
       <Contact />
       <Footer />
