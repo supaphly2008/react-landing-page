@@ -41,7 +41,7 @@ const Dropdown = (props) => {
 
   useEffect(() => {
     i18n.changeLanguage(selectedOption.value);
-  }, [selectedOption.value]);
+  }, [selectedOption.value, i18n]);
 
   const onOptionClicked = (option) => {
     setSelectedOption(option);
