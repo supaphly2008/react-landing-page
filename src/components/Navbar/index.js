@@ -5,6 +5,8 @@ import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import Dropwdown from "components/Dropdown";
+import usFlag from "images/us.svg";
+import twFlag from "images/tw.svg";
 
 const Nav = styled.nav`
   background-color: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
@@ -25,7 +27,7 @@ const Nav = styled.nav`
 
 const NavbarContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -91,11 +93,35 @@ const NavLinks = styled(LinkS)`
   }
 `;
 
+const ExtendDropdown = styled(Dropwdown)`
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const options = [
+  {
+    value: "zh",
+    name: "中文",
+    icon: twFlag,
+  },
+  {
+    value: "en",
+    name: "EN",
+    icon: usFlag,
+  },
+];
+
+const defaultOption = {
+  value: "en",
+  name: "EN",
+  icon: usFlag,
+};
+
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
   // TODO: add language dropdown
-  const { t, i18n } = useTranslation();
-  // console.log(Dropwdown)
+  const { t } = useTranslation();
   const changeNav = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true);
@@ -144,7 +170,7 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
           </NavMenu>
-          <Dropwdown />
+          <ExtendDropdown options={options} defaultOption={defaultOption} />
         </NavbarContainer>
       </Nav>
     </>

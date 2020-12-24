@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import usFlag from "images/us.svg";
-import twFlag from "images/tw.svg";
+import { useTranslation } from "react-i18next";
 
 const DropwdownContainer = styled.div``;
 
@@ -13,6 +12,8 @@ const DropdownListContainer = styled.ul`
 const DropdownBox = styled.div`
   color: #fff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
 const DropdownListItem = styled.li`
@@ -31,36 +32,27 @@ const Img = styled.img`
   margin-right: 10px;
 `;
 
-const options = [
-  {
-    value: "zh",
-    name: "中文",
-    icon: twFlag,
-  },
-  {
-    value: "en",
-    name: "EN",
-    icon: usFlag,
-  },
-];
-
-const Dropdown = () => {
+const Dropdown = (props) => {
+  const { className, options, defaultOption } = props;
+  const { i18n } = useTranslation();
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedOption, setSelectedOption] = useState({
-    value: "en",
-    name: "EN",
-    icon: usFlag,
-  });
+  const [selectedOption, setSelectedOption] = useState(defaultOption);
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedOption.value);
+  }, [selectedOption.value]);
 
   const onOptionClicked = (option) => {
-    console.log(option);
     setSelectedOption(option);
     setShowDropdown(false);
   };
 
   return (
-    <DropwdownContainer>
-      <DropdownBox onClick={() => setShowDropdown(!showDropdown)}>{selectedOption.name}</DropdownBox>
+    <DropwdownContainer className={className}>
+      <DropdownBox onClick={() => setShowDropdown(!showDropdown)}>
+        <Img src={selectedOption.icon} alt="" />
+        {selectedOption.name}
+      </DropdownBox>
       {showDropdown && (
         <DropdownListContainer>
           {options.map((option) => {
