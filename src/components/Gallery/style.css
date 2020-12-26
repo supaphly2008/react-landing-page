@@ -1,0 +1,16 @@
+.image-gallery {
+  width: 100%;
+  /* height: 300px; */
+  margin: 0 auto;
+}
+
+.image-gallery-image {
+  height: 500px;
+  object-fit: contain !important;
+}
+
+@media screen and (max-width: 768px) {
+  .image-gallery {
+    width: 100%;
+  }
+}
