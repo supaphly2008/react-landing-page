@@ -90,7 +90,7 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <HeroBg>
-        <VideoBg autoPlay loop playsinline muted src={Video} type="vieo/mp4" />
+        <VideoBg playsInline loop muted autoPlay src={Video} type="vieo/mp4" />
       </HeroBg>
       <HeroContent>
         <HeroH1>{t("hero.heading")}</HeroH1>
